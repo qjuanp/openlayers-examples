@@ -12,7 +12,7 @@ MyMarker = function  (data) {
 		cSize		= OpenLayers.Size,
 		cPixel		= OpenLayers.Pixel,
 	// Private attribute
-		iconSize	= {w:64,h:64},
+		iconSize	= {w:24,h:24},
 		imgPath		= "img/imgPerson.png"
 		localLonLat = new cLonLat(data.Location.lon,
 								data.Location.lat).transform(
@@ -33,7 +33,7 @@ MyMarker = function  (data) {
 	}
 
 	// Call father constructor
-	cMarker.call(this,localLonLat,getIcon());
+	OpenLayers.Marker.call(this,localLonLat,getIcon());
 }
 
 // Heredar de OpenLayers.Marker

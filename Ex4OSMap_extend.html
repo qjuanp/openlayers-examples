@@ -1,7 +1,8 @@
 <html>
     <head>
     	<script src="http://openlayers.org/api/OpenLayers.js" type="text/javascript"></script>
-    	<script TYPE="text/javascript" src="MyMarker.js"></script>
+    	<script TYPE="text/javascript" src="MyMarker2.js"></script>
+        <script TYPE="text/javascript" src="MyMarker.js"></script>
     	<script type="text/javascript">
     		var map;
     		function init(){
@@ -22,7 +23,7 @@
     		}
 
             function createMarker(markers){
-                var mak = new MyMarker(
+                var mak = new OpenLayers.MyMarker2(
                         {
                             Name: "Eimy",
                             Location: {
@@ -33,27 +34,31 @@
                         }
                     );
 
-                mak.events.register("mouseover",null,function(args){
-
-                    var lonlat = args.object.lonlat;
-                    var markers = map.getLayersByName("markers")[0].markers;
-                    var marker = null;
-                    for (var i = 0; i < markers.length; i++) {
-                        if(
-                            markers[i].lonlat.lon == lonlat.lon &&
-                            markers[i].lonlat.lat == lonlat.lat
-                            ){ 
-                                marker = markers[i];
-                                i = markers.length;
+                var mak2 = new OpenLayers.MyMarker2(
+                        {
+                            Name: "Carito",
+                            Location: {
+                                lon: -90.097311,
+                                lat: 4.809134
                             }
-                    };
 
-                    if(marker != null){
-                        console.log(marker.data.Name);
-                    }
-                });
+                        }
+                    );
 
-                markers.addMarker(mak);
+                var mak3 = new OpenLayers.MyMarker2(
+                        {
+                            Name: "Paola",
+                            Location: {
+                                lon: -74.157311,
+                                lat: 4.809134
+                            }
+
+                        }
+                    );
+
+                 markers.addMarker(mak);
+                markers.addMarker(mak2);
+                markers.addMarker(mak3);
             }
     	</script>
     	
