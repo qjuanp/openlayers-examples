@@ -1,8 +1,8 @@
 openlayers-examples
 ===================
 
-BogotaJS
---------
+BogotaJS & Software Freedom Day Bogotá
+--------------------------------------
 
 Los ejemplos usados durante el BogotaJS son:
 
